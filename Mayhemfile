@@ -1,0 +1,21 @@
+# Mayhem by https://forallsecure.com
+# Mayhemfile: configuration file for testing your target with Mayhem
+# Format: YAML 1.1
+
+project: xpack
+target: xpack
+
+
+# Time that analysis will run for in seconds - if absent, run forever
+duration: 60
+
+# Turns on extra test case processing (completing a run will take longer)
+advanced_triage: false
+
+# List of commands used to test the target
+cmds:
+
+  # Command used to start the target, "@@" is the input file
+  # (when "@@" is omitted Mayhem defaults to stdin inputs)
+  - cmd: /fuzz_decoder
+    env: {}
